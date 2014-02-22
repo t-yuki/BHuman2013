@@ -6,7 +6,7 @@ __SOFLAGS := -fpic
 __CPPFLAGS := -std=c++11 -pipe -mssse3 -ffast-math -Wall -Wsign-compare -Wno-address -Wno-deprecated -Wno-overloaded-virtual -Wno-reorder -Wno-sign-conversion -Wno-strict-aliasing -Wno-switch -Wno-uninitialized -Wno-unused-parameter -O3 -fomit-frame-pointer
 __CFLAGS := -Wall -Os -fomit-frame-pointer
 __DEFINES := -DLINUX -DNDEBUG -DQT_NO_DEBUG -DQT_SHARED -DQT_CORE_LIB -DQT_NO_STL
-__INCLUDEPATHS := -I../Src/SimRobotCore2 -I../Util/glew/Linux/include -I/usr/include/qt4/QtCore -I/usr/include/qt4 -I/usr/include/QtCore -I/usr/include/Qt
+__INCLUDEPATHS := -I../Src/SimRobotCore2 -I../Util/glew/Linux/include `pkg-config --cflags QtCore QtGui QtSvg Qt`
 __OBJECTS := ../Build/Factory/Linux/Release/Src/Controllers/FactoryController.o
 __LINKFLAGS := 
 __LIBPATHS := 

@@ -6,7 +6,7 @@ __SOFLAGS :=
 __CPPFLAGS := -std=c++11 -pipe -mssse3 -ffast-math -Wall -Wsign-compare -Wno-address -Wno-deprecated -Wno-overloaded-virtual -Wno-reorder -Wno-sign-conversion -Wno-strict-aliasing -Wno-switch -Wno-uninitialized -Wno-unused-parameter -g
 __CFLAGS := -Wall -g
 __DEFINES := -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL
-__INCLUDEPATHS := -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtSvg -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include/Qt -I/usr/include/QtSvg
+__INCLUDEPATHS := `pkg-config --cflags QtCore QtGui QtSvg Qt`
 __OBJECTS := ../Build/SimRobot/Linux/Debug/Src/SimRobot/Main.o ../Build/SimRobot/Linux/Debug/Src/SimRobot/MainWindow.o ../Build/SimRobot/Linux/Debug/Src/SimRobot/RegisteredDockWidget.o ../Build/SimRobot/Linux/Debug/Src/SimRobot/SceneGraphDockWidget.o ../Build/SimRobot/Linux/Debug/Src/SimRobot/StatusBar.o ../Build/SimRobot/Linux/Debug/Build/SimRobot/Linux/Debug/qrc_SimRobot.o ../Build/SimRobot/Linux/Debug/Build/SimRobot/Linux/Debug/moc_MainWindow.o ../Build/SimRobot/Linux/Debug/Build/SimRobot/Linux/Debug/moc_RegisteredDockWidget.o ../Build/SimRobot/Linux/Debug/Build/SimRobot/Linux/Debug/moc_SceneGraphDockWidget.o ../Build/SimRobot/Linux/Debug/Build/SimRobot/Linux/Debug/moc_StatusBar.o
 __LINKFLAGS := 
 __LIBPATHS := 
@@ -52,19 +52,19 @@ SimRobot: ../Build/SimRobot/Linux/Debug/moc_MainWindow.cpp ../Build/SimRobot/Lin
 
 ../Build/SimRobot/Linux/Debug/moc_MainWindow.cpp: ../Src/SimRobot/MainWindow.h | ../Build/SimRobot/Linux/Debug
 	@echo "../Src/SimRobot/MainWindow.h (Qt moc)"
-	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtSvg -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include/Qt -I/usr/include/QtSvg ../Src/SimRobot/MainWindow.h -o ../Build/SimRobot/Linux/Debug/moc_MainWindow.cpp
+	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  `pkg-config --cflags QtCore QtGui QtSvg Qt` ../Src/SimRobot/MainWindow.h -o ../Build/SimRobot/Linux/Debug/moc_MainWindow.cpp
 
 ../Build/SimRobot/Linux/Debug/moc_RegisteredDockWidget.cpp: ../Src/SimRobot/RegisteredDockWidget.h | ../Build/SimRobot/Linux/Debug
 	@echo "../Src/SimRobot/RegisteredDockWidget.h (Qt moc)"
-	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtSvg -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include/Qt -I/usr/include/QtSvg ../Src/SimRobot/RegisteredDockWidget.h -o ../Build/SimRobot/Linux/Debug/moc_RegisteredDockWidget.cpp
+	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  `pkg-config --cflags QtCore QtGui QtSvg Qt` ../Src/SimRobot/RegisteredDockWidget.h -o ../Build/SimRobot/Linux/Debug/moc_RegisteredDockWidget.cpp
 
 ../Build/SimRobot/Linux/Debug/moc_SceneGraphDockWidget.cpp: ../Src/SimRobot/SceneGraphDockWidget.h | ../Build/SimRobot/Linux/Debug
 	@echo "../Src/SimRobot/SceneGraphDockWidget.h (Qt moc)"
-	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtSvg -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include/Qt -I/usr/include/QtSvg ../Src/SimRobot/SceneGraphDockWidget.h -o ../Build/SimRobot/Linux/Debug/moc_SceneGraphDockWidget.cpp
+	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  `pkg-config --cflags QtCore QtGui QtSvg Qt` ../Src/SimRobot/SceneGraphDockWidget.h -o ../Build/SimRobot/Linux/Debug/moc_SceneGraphDockWidget.cpp
 
 ../Build/SimRobot/Linux/Debug/moc_StatusBar.cpp: ../Src/SimRobot/StatusBar.h | ../Build/SimRobot/Linux/Debug
 	@echo "../Src/SimRobot/StatusBar.h (Qt moc)"
-	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I/usr/include/qt4/QtSvg -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include/Qt -I/usr/include/QtSvg ../Src/SimRobot/StatusBar.h -o ../Build/SimRobot/Linux/Debug/moc_StatusBar.cpp
+	@moc-qt4 -DLINUX -D_DEBUG -DQT_SHARED -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SVG_LIB -DQT_NO_STL  `pkg-config --cflags QtCore QtGui QtSvg Qt` ../Src/SimRobot/StatusBar.h -o ../Build/SimRobot/Linux/Debug/moc_StatusBar.cpp
 
 ../Build/SimRobot/Linux/Debug/help.qch: ../Build/SimRobotHelp/Linux/Debug/help.qch | ../Build/SimRobot/Linux/Debug
 	@echo "../Build/SimRobotHelp/Linux/Debug/help.qch (copy)"
